@@ -22,6 +22,6 @@ The Unsent is an anonymous, nostalgia-inspired digital message board where peopl
 
 Anyone with something to say, and nowhere to say it. Someone who craves connection without the pressure of identity. Someone needing a place to process an emotional event. 
 
-##W ireframe
+## Wireframe
 
 ![Wireframe](wireframe.png)
