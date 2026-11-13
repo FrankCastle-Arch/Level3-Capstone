@@ -1,5 +1,5 @@
 import "./App.css";
-import SectionCard from "./components/SectionCard";
+import SectionCard from "./components/SectionCard.jsx";
 
 function App() {
   const sections = [
