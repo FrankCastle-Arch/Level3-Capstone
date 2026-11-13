@@ -10,10 +10,10 @@ The Unsent is an anonymous, nostalgia-inspired digital message board where peopl
 2. The Keepsake: moments I want to keep
 3. The Someday: notes to my future self
 
-### Signature Feature: Echo Wall
+### *Signature Feature: Echo Wall
 
 1. A vistor reads an anonymous submission
-2. They slect an Echo reaction
+2. They select an Echo reaction
 3. The reaction is saved to Supabase
 4. The original author can see how many people resonated with their message
 5. Vistors see the collective response without seeing who reacted
