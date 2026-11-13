@@ -1,5 +1,5 @@
 
-function sectionCard({ title, description, icon, color, number, link }) {
+function SectionCard({ title, description, icon, color, number, link }) {
   return (
     <a
       href={link}
@@ -24,4 +24,4 @@ function sectionCard({ title, description, icon, color, number, link }) {
   );
 }
 
-export default sectionCard;
+export default SectionCard;
