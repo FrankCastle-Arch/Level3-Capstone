@@ -1,5 +1,9 @@
+import { useEffect, useState } from "react";
+import { supabase } from "./utils/supabase.js";
+
 import "./App.css";
 import SectionCard from "./components/SectionCard.jsx";
+import TheUnsaid from "./pages/TheUnsaid.jsx";
 
 function App() {
   const sections = [
@@ -31,8 +35,6 @@ function App() {
 
   return (
     <div className="website">
-
-    
       <nav className="navbar">
         <a href="#" className="logo">
           the unsent<span>.</span>
@@ -49,19 +51,21 @@ function App() {
         </a>
       </nav>
 
-      {/* Hero */}
       <header className="hero">
-        <div className="hero-decoration">✿ &nbsp; A DIGITAL TIME CAPSULE &nbsp; ✿</div>
+        <img src="/images/pressed-flower.png" alt="" className="hero-flower" />
+        <div className="hero-decoration">
+          ✿ &nbsp; A DIGITAL TIME CAPSULE &nbsp; ✿
+        </div>
 
         <h1>
           Some things are
           <br />
-          easier to <em>leave here.</em>
+          easier to <em>leave here</em>
         </h1>
 
         <p className="hero-description">
-          Anonymous thoughts. Unforgettable moments.
-          Messages to the person we're becoming.
+          Anonymous thoughts. Unforgettable moments. Messages to the person
+          we're becoming.
         </p>
 
         <a href="#spaces" className="primary-button">
@@ -69,16 +73,17 @@ function App() {
         </a>
 
         <p className="hero-footer">
-          YOU DON'T HAVE TO SAY WHO YOU ARE TO BE HEARD.
+          YOU DON'T HAVE TO SAY WHO YOU ARE TO BE HEARD
         </p>
       </header>
 
-      w
       <main>
         <section className="spaces" id="spaces">
           <div className="section-heading">
             <div>
-              <span className="eyebrow">THREE LITTLE CORNERS OF THE INTERNET</span>
+              <span className="eyebrow">
+                THREE LITTLE CORNERS OF THE INTERNET
+              </span>
               <h2>Where would you like to begin?</h2>
             </div>
 
@@ -87,22 +92,20 @@ function App() {
 
           <div className="section-grid">
             {sections.map((section) => (
-              <SectionCard
-                key={section.number}
-                {...section}
-              />
+              <SectionCard key={section.number} {...section} />
             ))}
           </div>
         </section>
 
-        {/* Echo preview */}
         <section className="echo-section" id="echo">
           <div className="echo-intro">
             <span className="eyebrow">A LITTLE HUMAN CONNECTION</span>
-            <h2>Leave an <em>echo.</em></h2>
+            <h2>
+              Leave an <em>echo</em>
+            </h2>
             <p>
-              Sometimes we don't need advice.
-              We just need to know someone understands.
+              Sometimes we don't need advice. We just need to know someone
+              understands.
             </p>
           </div>
 
@@ -113,48 +116,33 @@ function App() {
             </div>
 
             <blockquote>
-              "I hope one day I stop feeling like I'm running
-              out of time to become the person I want to be."
+              "I hope one day I stop feeling like I'm running out of time to
+              become the person I want to be."
             </blockquote>
 
             <div className="note-bottom">
-              <span>Someone left these words here.</span>
+              <span>Someone left these words here</span>
               <span className="echo-heart">♡</span>
             </div>
           </div>
         </section>
-
-        {/* Section destinations */}
-        <section className="destination-section">
-          <div id="unsaid" className="destination">
-            <span>01 · THE UNSAID</span>
-            <h2>What have you been holding in?</h2>
-            <p>Some words deserve somewhere to go.</p>
-          </div>
-
-          <div id="keepsake" className="destination">
-            <span>02 · THE KEEPSAKE</span>
-            <h2>What do you never want to forget?</h2>
-            <p>Little moments can leave the biggest marks.</p>
-          </div>
-
-          <div id="someday" className="destination">
-            <span>03 · the someday</span>
-            <h2>What would you tell your future self?</h2>
-            <p>Leave a little reminder for the person you're becoming.</p>
+        <section>
+          <div>
+            <TheUnsaid />
           </div>
         </section>
       </main>
 
       {/* Footer */}
       <footer className="footer">
-        <a href="#" className="logo">the unsent<span>.</span></a>
-        <p>You don't have to say who you are to be heard.</p>
-        <span>MADE OF WORDS, MEMORIES & LITTLE PIECES OF US. ♡</span>
+        <a href="#" className="logo">
+          the unsent<span>.</span>
+        </a>
+        <p>You don't have to say who you are to be heard</p>
+        <span>MADE OF WORDS, MEMORIES & LITTLE PIECES OF US ♡</span>
       </footer>
-
     </div>
   );
 }
 
-export default App
+export default App;
