@@ -24,4 +24,4 @@ function SectionCard({ title, description, icon, color, number, link }) {
   );
 }
 
-export default SectionCard;
+export default SectionCard
