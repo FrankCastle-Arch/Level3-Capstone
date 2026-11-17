@@ -176,9 +176,14 @@
   flex-direction: column;
   justify-content: space-between;
   color: var(--ink);
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  clip-path: polygon(
+    1% 1%, 25% 0%, 50% 1%, 75% 0%, 99% 1%,
+    100% 25%, 99% 50%, 100% 75%, 99% 99%,
+    75% 100%, 50% 99%, 25% 100%, 1% 99%,
+    0% 75%, 1% 50%, 0% 25%
+  );
 }
 
 .section-card:hover {
