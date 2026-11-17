@@ -10,7 +10,7 @@ The Unsent is an anonymous, nostalgia-inspired digital message board where peopl
 2. The Keepsake: moments I want to keep
 3. The Someday: notes to my future self
 
-### \*Signature Feature: Echo Wall
+### *Signature Feature: Echo Wall
 
 1. A vistor reads an anonymous submission
 2. They select an Echo reaction
@@ -33,3 +33,8 @@ cute flowers on white surface - freepik - magnific.com
 ## Pod doc
 
 https://docs.google.com/document/d/1mQySxORC2Bp30ZHNkmuCxnYR95Vv0X6jM_2CmppKQQk/edit?usp=sharing
+
+
+## A note on Anonymity and Care
+Please do not post real names, contact details, or other identifying information. Be kind. Many of these messages are personal.
+The Unsent is a place for reflection, not a substitute for support. If you are struggling or in crisis, you can call or text 988 (the Suicide & Crisis Lifeline in the US) or contact local emergency services.
