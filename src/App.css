@@ -167,7 +167,7 @@
   gap: 22px;
 }
 
-.section-card {
+.section-grid .section-card {
   min-height: 280px;
   padding: 25px;
   border: 1px solid rgba(89, 72, 61, 0.08);
@@ -186,7 +186,7 @@
   );
 }
 
-.section-card:hover {
+.section-grid .section-card:hover {
   transform: translateY(-8px) rotate(-1deg);
   filter: drop-shadow(0 10px 8px rgba(89, 72, 61, 0.13));
 }
@@ -448,3 +448,4 @@
     grid-template-columns: 1fr;
   }
 }
+

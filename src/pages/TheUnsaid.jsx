@@ -39,6 +39,20 @@ function TheUnsaid() {
         return;
       }
 
+      const { data: echoData, error: echoError } = await supabase
+        .from("echoes")
+        .select("post_id");
+
+      if (echoError) {
+        console.error("Error fetching echoes:", echoError.message);
+      }
+
+      const echoCounts = {};
+
+      echoData?.forEach((echo) => {
+        echoCounts[echo.post_id] = (echoCounts[echo.post_id] || 0) + 1;
+      });
+
       const colors = ["pink", "sage", "cream", "rose"];
 
       const formattedPosts = data.map((post, index) => ({
@@ -50,9 +64,11 @@ function TheUnsaid() {
           day: "numeric",
           year: "numeric",
         }),
-        echoes: 0,
+        echoes: echoCounts[post.id] || 0,
         color: colors[index % colors.length],
       }));
+
+      setPosts(formattedPosts);
 
       setPosts(formattedPosts);
       setLoading(false);
@@ -74,15 +90,33 @@ function TheUnsaid() {
     );
   }
 
-  function handleRandomNote() {
-    if (posts.length === 0) return;
+  async function handleRandomNote() {
+  const { data, error } = await supabase
+    .from("posts")
+    .select("id, category, content, created_at")
+    .eq("is_approved", true)
+    .is("unlock_at", null);
 
-    const randomIndex = Math.floor(Math.random() * posts.length);
-
-    const randomPost = posts[randomIndex];
-
-    setFeaturedPost(randomPost);
+  if (error) {
+    console.error("Error finding a random note:", error.message);
+    return;
   }
+
+  if (!data || data.length === 0) return;
+
+  const randomIndex = Math.floor(Math.random() * data.length);
+  const randomPost = data[randomIndex];
+
+  setFeaturedPost({
+    ...randomPost,
+    date: new Date(randomPost.created_at).toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }),
+    echoes: 0,
+  });
+}
 
   async function handleSubmit(event) {
     event.preventDefault();

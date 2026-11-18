@@ -195,7 +195,7 @@
   gap: 22px;
 }
 
-.message-card {
+.message-board .message-card {
   min-height: 225px;
   padding: 25px;
   display: flex;
@@ -203,16 +203,22 @@
   justify-content: space-between;
   border: 1px solid rgba(89, 72, 61, 0.08);
   border-radius: 4px;
-  transition:
-    transform 0.25s,
-    box-shadow 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s;
   position: relative;
+
   background-image: repeating-linear-gradient(
     0deg,
     rgba(89, 72, 61, 0.018) 0px,
     rgba(89, 72, 61, 0.018) 1px,
     transparent 1px,
     transparent 4px
+  );
+
+  clip-path: polygon(
+    1% 1%, 25% 0%, 50% 1%, 75% 0%, 99% 1%,
+    100% 25%, 99% 50%, 100% 75%, 99% 99%,
+    75% 100%, 50% 99%, 25% 100%, 1% 99%,
+    0% 75%, 1% 50%, 0% 25%
   );
 }
 
@@ -229,9 +235,9 @@
   border-right: 1px solid rgba(89, 72, 61, 0.08);
 }
 
-.message-card:hover {
+.message-board .message-card:hover {
   transform: translateY(-4px) rotate(-0.3deg);
-  box-shadow: 0 10px 25px rgba(89, 72, 61, 0.1);
+  filter: drop-shadow(0 8px 6px rgba(89, 72, 61, 0.12));
 }
 
 .message-card.pink {
