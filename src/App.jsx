@@ -4,6 +4,7 @@ import { supabase } from "./utils/supabase.js";
 import "./App.css";
 import SectionCard from "./components/SectionCard.jsx";
 import TheUnsaid from "./pages/TheUnsaid.jsx";
+import TheKeepsake from "./pages/TheKeepsake.jsx";
 
 function App() {
   const sections = [
@@ -129,6 +130,11 @@ function App() {
         <section>
           <div>
             <TheUnsaid />
+          </div>
+        </section>
+        <section>
+          <div>
+            <TheKeepsake />
           </div>
         </section>
       </main>

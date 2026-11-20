@@ -1,0 +1,120 @@
+.keepsake-page {
+  width: 100%;
+  padding-bottom: 80px;
+  background-color: #F3EBDD;
+}
+
+.keepsake-hero {
+  text-align: center;
+  padding: 85px 20px 55px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.keepsake-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #B8795D;
+}
+
+.keepsake-hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 58px;
+  font-weight: 400;
+  color: #59483D;
+  margin: 20px 0;
+}
+
+.keepsake-hero h1 em {
+  color: #B8795D;
+}
+
+.keepsake-hero p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #75665B;
+}
+
+.keepsake-decoration {
+  display: block;
+  font-size: 24px;
+  color: #B8795D;
+  margin-top: 25px;
+}
+
+/* Keepsake collection */
+
+.keepsake-collection {
+  max-width: 1150px;
+  margin: 30px auto;
+  padding: 30px 6%;
+}
+
+.keepsake-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+/* Individual paper cards */
+
+.keepsake-card {
+  background-color: #FFFAF2;
+  padding: 32px 28px;
+  min-height: 230px;
+  box-shadow: 0 8px 20px rgba(89, 72, 61, 0.10);
+  clip-path: polygon(
+    0% 2%, 8% 1%, 17% 2%, 28% 0%,
+    40% 2%, 52% 1%, 65% 2%, 77% 0%,
+    90% 2%, 100% 1%, 99% 95%, 91% 97%,
+    79% 96%, 66% 99%, 52% 97%, 39% 99%,
+    25% 97%, 12% 99%, 1% 96%
+  );
+  transition: transform 0.3s ease;
+}
+
+.keepsake-card:nth-child(2) {
+  background-color: #E5DFC9;
+  transform: rotate(1.5deg);
+}
+
+.keepsake-card:nth-child(3) {
+  background-color: #E9D5CA;
+  transform: rotate(-1deg);
+}
+
+.keepsake-card:hover {
+  transform: translateY(-5px) rotate(0deg);
+}
+
+.keepsake-card-category {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #B8795D;
+}
+
+.keepsake-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 500;
+  color: #59483D;
+  margin: 20px 0 12px;
+}
+
+.keepsake-card p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #75665B;
+}
+
+.keepsake-card-date {
+  display: block;
+  margin-top: 25px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #9B7967;
+}
