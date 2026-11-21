@@ -1,30 +1,75 @@
+import { useState, useEffect } from "react";
+import { supabase } from "../utils/supabase.js";
 import "./TheKeepsake.css";
+import KeepsakeForm from "../components/KeepsakeForm.jsx";
 import KeepsakeCard from "../components/KeepsakeCard.jsx";
 
 function TheKeepsake() {
-  const keepsakes = [
-    {
-      id: 1,
-      title: "The Little Things",
-      content: "A slow morning, warm coffee, and nowhere we needed to be.",
-      date: "November 12, 2026",
-      category: "Little Moments",
-    },
-    {
-      id: 2,
-      title: "A Favorite Memory",
-      content: "The sound of everyone laughing around the dinner table.",
-      date: "November 14, 2026",
-      category: "Family",
-    },
-    {
-      id: 3,
-      title: "Someday I'll Remember",
-      content: "How small their hands were when they reached for mine.",
-      date: "November 16, 2026",
-      category: "Things to Remember",
-    },
-  ];
+  const [keepsakes, setKeepsakes] = useState([]);
+  useEffect(() => {
+    async function fetchKeepsakes() {
+      const { data, error } = await supabase
+        .from("keepsakes")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) {
+        console.error("Error loading keepsakes:", error.message);
+        return;
+      }
+
+      const formattedKeepsakes = data.map((keepsake) => ({
+        ...keepsake,
+        date: new Date(keepsake.created_at).toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        }),
+      }));
+
+      setKeepsakes(formattedKeepsakes);
+    }
+
+    fetchKeepsakes();
+  }, []);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const filteredKeepsakes =
+    activeCategory === "All"
+      ? keepsakes
+      : keepsakes.filter((keepsake) => keepsake.category === activeCategory);
+
+  async function handleAddKeepsake(newKeepsake) {
+    const { data, error } = await supabase
+      .from("keepsakes")
+      .insert([
+        {
+          title: newKeepsake.title,
+          content: newKeepsake.content,
+          category: newKeepsake.category,
+        },
+      ])
+      .select()
+      .single();
+
+    if (error) {
+      console.error("Error saving keepsake:", error.message);
+      return;
+    }
+
+    const savedKeepsake = {
+      ...data,
+      date: new Date(data.created_at).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      }),
+    };
+
+    setKeepsakes((previousKeepsakes) => [
+      savedKeepsake,
+      ...previousKeepsakes,
+    ]);
+  }
 
   return (
     <main id="keepsake" className="keepsake-page">
@@ -43,8 +88,21 @@ function TheKeepsake() {
         <span className="keepsake-decoration">♡</span>
       </section>
       <section className="keepsake-collection">
+        <div className="keepsake-filters">
+          {["All", "Little Moments", "Family", "Things to Remember"].map(
+            (category) => (
+              <button
+                key={category}
+                className={activeCategory === category ? "active" : ""}
+                onClick={() => setActiveCategory(category)}
+              >
+                {category}
+              </button>
+            ),
+          )}
+        </div>
         <div className="keepsake-grid">
-          {keepsakes.map((keepsake) => (
+          {filteredKeepsakes.map((keepsake) => (
             <KeepsakeCard
               key={keepsake.id}
               title={keepsake.title}
@@ -54,6 +112,9 @@ function TheKeepsake() {
             />
           ))}
         </div>
+      </section>
+      <section className="keepsake-form-section">
+        <KeepsakeForm onAddKeepsake={handleAddKeepsake} />
       </section>
     </main>
   );

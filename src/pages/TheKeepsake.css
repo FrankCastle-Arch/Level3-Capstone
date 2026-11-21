@@ -61,31 +61,45 @@
 
 .keepsake-card {
   background-color: #FFFAF2;
-  padding: 32px 28px;
-  min-height: 230px;
-  box-shadow: 0 8px 20px rgba(89, 72, 61, 0.10);
-  clip-path: polygon(
-    0% 2%, 8% 1%, 17% 2%, 28% 0%,
-    40% 2%, 52% 1%, 65% 2%, 77% 0%,
-    90% 2%, 100% 1%, 99% 95%, 91% 97%,
-    79% 96%, 66% 99%, 52% 97%, 39% 99%,
-    25% 97%, 12% 99%, 1% 96%
-  );
+  padding: 38px 30px;
+  min-height: 280px;
+  border: 1px solid #E5D8C7;
+  box-shadow: 3px 5px 14px rgba(89, 72, 61, 0.12);
+  position: relative;
   transition: transform 0.3s ease;
 }
 
+.keepsake-card::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(
+    225deg,
+    #D8C8B4 50%,
+    transparent 50%
+  );
+  opacity: 0.65;
+}
+
+.keepsake-card:nth-child(1) {
+  transform: rotate(-1.5deg);
+}
+
 .keepsake-card:nth-child(2) {
-  background-color: #E5DFC9;
-  transform: rotate(1.5deg);
+  background-color: #F5F0E5;
+  transform: rotate(1deg);
 }
 
 .keepsake-card:nth-child(3) {
-  background-color: #E9D5CA;
-  transform: rotate(-1deg);
+  background-color: #EEE8DC;
+  transform: rotate(-0.5deg);
 }
 
 .keepsake-card:hover {
-  transform: translateY(-5px) rotate(0deg);
+  transform: translateY(-6px) rotate(0deg);
 }
 
 .keepsake-card-category {
@@ -111,10 +125,117 @@
 }
 
 .keepsake-card-date {
-  display: block;
-  margin-top: 25px;
+  display: inline-block;
+  margin-top: 28px;
+  padding: 6px 12px;
+  border: 1px solid #D8C8B4;
+  border-radius: 2px;
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: 14px;
+  letter-spacing: 0.5px;
   color: #9B7967;
+  background-color: rgba(255, 250, 242, 0.55);
+}
+
+.keepsake-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 40px;
+}
+
+.keepsake-filters button {
+  padding: 10px 20px;
+  border: 1px solid #D8C8B4;
+  border-radius: 30px;
+  background-color: #FFFAF2;
+  color: #75665B;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.keepsake-filters button:hover {
+  background-color: #E9D5CA;
+  color: #59483D;
+}
+
+.keepsake-filters button.active {
+  background-color: #B8795D;
+  border-color: #B8795D;
+  color: #FFFAF2;
+}
+
+.keepsake-form-section {
+  max-width: 650px;
+  margin: 80px auto 40px;
+  padding: 45px;
+  background-color: #E5DFC9;
+  box-shadow: 3px 6px 18px rgba(89, 72, 61, 0.10);
+  border: 1px solid #D8C8B4;
+}
+
+.keepsake-form h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 400;
+  text-align: center;
+  color: #59483D;
+  margin-bottom: 30px;
+}
+
+.keepsake-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.keepsake-form label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  color: #75665B;
+  margin-top: 8px;
+}
+
+.keepsake-form input,
+.keepsake-form select,
+.keepsake-form textarea {
+  padding: 13px 15px;
+  border: 1px solid #D8C8B4;
+  background-color: #FFFAF2;
+  color: #59483D;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  outline: none;
+}
+
+.keepsake-form input:focus,
+.keepsake-form select:focus,
+.keepsake-form textarea:focus {
+  border-color: #B8795D;
+}
+
+.keepsake-form textarea {
+  resize: vertical;
+}
+
+.keepsake-form button {
+  margin-top: 15px;
+  padding: 14px;
+  border: none;
+  background-color: #B8795D;
+  color: #FFFAF2;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.keepsake-form button:hover {
+  background-color: #9F634B;
 }

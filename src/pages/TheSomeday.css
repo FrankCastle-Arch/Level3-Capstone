@@ -1,0 +1,44 @@
+.someday-page {
+  width: 100%;
+  padding-bottom: 80px;
+  background-color: #F3EBDD;
+}
+
+.someday-hero {
+  text-align: center;
+  padding: 85px 20px 55px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.someday-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #B8795D;
+}
+
+.someday-hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 58px;
+  font-weight: 400;
+  color: #59483D;
+  margin: 20px 0;
+}
+
+.someday-hero h1 em {
+  color: #B8795D;
+}
+
+.someday-hero p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #75665B;
+}
+
+.someday-decoration {
+  display: block;
+  font-size: 28px;
+  color: #B8795D;
+  margin-top: 25px;
+}

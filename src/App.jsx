@@ -5,6 +5,7 @@ import "./App.css";
 import SectionCard from "./components/SectionCard.jsx";
 import TheUnsaid from "./pages/TheUnsaid.jsx";
 import TheKeepsake from "./pages/TheKeepsake.jsx";
+import TheSomeday from "./pages/TheSomeday.jsx";
 
 function App() {
   const sections = [
@@ -135,6 +136,11 @@ function App() {
         <section>
           <div>
             <TheKeepsake />
+          </div>
+        </section>
+        <section>
+          <div>
+            <TheSomeday />
           </div>
         </section>
       </main>
