@@ -42,3 +42,141 @@
   color: #B8795D;
   margin-top: 25px;
 }
+
+/* Someday letter form */
+.someday-form-section {
+  max-width: 700px;
+  margin: 55px auto 75px;
+  padding: 45px;
+  background-color: #E5DFC9;
+  border: 1px solid #D8C8B4;
+  box-shadow: 3px 6px 18px rgba(89, 72, 61, 0.10);
+}
+
+.someday-form h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 400;
+  text-align: center;
+  color: #59483D;
+  margin-bottom: 30px;
+}
+
+.someday-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.someday-form label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  color: #75665B;
+  margin-top: 8px;
+}
+
+.someday-form input,
+.someday-form textarea {
+  padding: 13px 15px;
+  border: 1px solid #D8C8B4;
+  background-color: #FFFAF2;
+  color: #59483D;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+}
+
+.someday-form input:focus,
+.someday-form textarea:focus {
+  outline: none;
+  border-color: #B8795D;
+}
+
+.someday-form textarea {
+  resize: vertical;
+}
+
+.someday-form button {
+  margin-top: 15px;
+  padding: 14px;
+  border: none;
+  background-color: #B8795D;
+  color: #FFFAF2;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.someday-form button:hover {
+  background-color: #9F634B;
+}
+
+/* Unlocked letter collection */
+.someday-collection {
+  max-width: 1150px;
+  margin: 30px auto;
+  padding: 30px 6%;
+}
+
+.someday-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+/* Individual letters */
+.someday-card {
+  position: relative;
+  background-color: #FFFAF2;
+  padding: 38px 30px;
+  min-height: 280px;
+  border: 1px solid #D8C8B4;
+  box-shadow: 3px 5px 14px rgba(89, 72, 61, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.someday-card:nth-child(even) {
+  background-color: #F5F0E5;
+  transform: rotate(1deg);
+}
+
+.someday-card:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.someday-card:hover {
+  transform: translateY(-6px) rotate(0deg);
+}
+
+.someday-card-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #B8795D;
+}
+
+.someday-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 500;
+  color: #59483D;
+  margin: 20px 0 12px;
+}
+
+.someday-card p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #75665B;
+}
+
+.someday-card-date {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 6px 12px;
+  border: 1px solid #D8C8B4;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #9B7967;
+}
